@@ -1,0 +1,12 @@
+{
+  "name": "decision-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "author": "Luis D. Cortes <renaissance.scholar2012@gmail.com> (https://dancortes-portfolio.herokuapp.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
