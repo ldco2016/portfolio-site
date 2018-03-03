@@ -3,7 +3,7 @@
 console.log('App.js is running');
 
 var app = {
-  title: 'Decision',
+  title: 'Decision Tree',
   subtitle: 'For binary life decisions, put your trust in a computer',
   options: []
 };
@@ -24,9 +24,13 @@ var onRemoveAll = function onRemoveAll() {
   app.options = [];
   render();
 };
-// // create "Remove All" button above list
-// // on click -> wipe the array -> rerender
-//
+
+var onMakeDecision = function onMakeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  alert(option);
+};
+
 var appRoot = document.getElementById('app');
 //
 var render = function render() {
@@ -52,6 +56,11 @@ var render = function render() {
       'p',
       null,
       app.options.length
+    ),
+    React.createElement(
+      'button',
+      { disabled: app.options.length === 0, onClick: onMakeDecision },
+      'What should I do?'
     ),
     React.createElement(
       'button',
