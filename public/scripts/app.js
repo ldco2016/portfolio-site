@@ -7,10 +7,10 @@ var app = {
   subtitle: 'For binary life decisions, put your trust in a computer',
   options: []
 };
-
+//
 var onFormSubmit = function onFormSubmit(e) {
   e.preventDefault();
-
+  //
   var option = e.target.elements.option.value;
 
   if (option) {
@@ -19,16 +19,18 @@ var onFormSubmit = function onFormSubmit(e) {
     render();
   }
 };
-
+//
 var onRemoveAll = function onRemoveAll() {
   app.options = [];
   render();
 };
-// create "Remove All" button above list
-// on click -> wipe the array -> rerender
-
+// // create "Remove All" button above list
+// // on click -> wipe the array -> rerender
+//
 var appRoot = document.getElementById('app');
-
+//
+var numbers = [55, 101, 1000];
+//
 var render = function render() {
   var template = React.createElement(
     'div',
@@ -58,6 +60,14 @@ var render = function render() {
       { onClick: onRemoveAll },
       'Remove All'
     ),
+    numbers.map(function (number) {
+      return React.createElement(
+        'p',
+        { key: number },
+        'Number: ',
+        number
+      );
+    }),
     React.createElement(
       'ol',
       null,
