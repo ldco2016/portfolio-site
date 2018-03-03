@@ -20,12 +20,16 @@ var DecisionTreeApp = function (_React$Component) {
   _createClass(DecisionTreeApp, [{
     key: 'render',
     value: function render() {
+      var title = 'Decision Tree';
+      var subtitle = 'For binary life decisions, put your trust in a computer';
+      var options = ['Thing One', 'Thing Two', 'Thing Four'];
+
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title, subtitle: subtitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -46,18 +50,19 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: 'render',
     value: function render() {
+
       return React.createElement(
         'div',
         null,
         React.createElement(
           'h1',
           null,
-          'Decision Tree'
+          this.props.title
         ),
         React.createElement(
           'h2',
           null,
-          'For binary life decisions, put your trust in a computer'
+          this.props.subtitle
         )
       );
     }
@@ -108,8 +113,9 @@ var Options = function (_React$Component4) {
       return React.createElement(
         'div',
         null,
-        'Render Options component here',
-        React.createElement(Option, null)
+        this.props.options.map(function (option) {
+          return React.createElement(Option, { key: option, optionText: option });
+        })
       );
     }
   }]);
@@ -132,7 +138,7 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        'Option component here'
+        this.props.optionText
       );
     }
   }]);

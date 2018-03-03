@@ -1,10 +1,14 @@
 class DecisionTreeApp extends React.Component {
   render() {
+    const title = 'Decision Tree';
+    const subtitle = 'For binary life decisions, put your trust in a computer';
+    const options = ['Thing One','Thing Two','Thing Four'];
+
     return (
       <div>
-      <Header />
+      <Header title={title} subtitle={subtitle} />
       <Action />
-      <Options />
+      <Options options={options} />
       <AddOption />
       </div>
     );
@@ -13,10 +17,11 @@ class DecisionTreeApp extends React.Component {
 
 class Header extends React.Component {
   render() {
+
     return (
       <div>
-        <h1>Decision Tree</h1>
-        <h2>For binary life decisions, put your trust in a computer</h2>
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.subtitle}</h2>
       </div>
     );
   }
@@ -36,8 +41,9 @@ class Options extends React.Component {
   render () {
     return (
       <div>
-        Render Options component here
-        <Option />
+        {
+          this.props.options.map((option) => <Option key={option} optionText={option} />)
+        }
       </div>
     );
   }
@@ -47,7 +53,7 @@ class Option extends React.Component {
   render () {
     return (
       <div>
-        Option component here
+        {this.props.optionText}
       </div>
     );
   }
