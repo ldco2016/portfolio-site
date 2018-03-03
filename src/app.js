@@ -1,3 +1,16 @@
+class DecisionTreeApp extends React.Component {
+  render() {
+    return (
+      <div>
+      <Header />
+      <Action />
+      <Options />
+      <AddOption />
+      </div>
+    );
+  }
+}
+
 class Header extends React.Component {
   render() {
     return (
@@ -24,6 +37,17 @@ class Options extends React.Component {
     return (
       <div>
         Render Options component here
+        <Option />
+      </div>
+    );
+  }
+}
+
+class Option extends React.Component {
+  render () {
+    return (
+      <div>
+        Option component here
       </div>
     );
   }
@@ -33,19 +57,10 @@ class AddOption extends React.Component {
   render () {
     return (
       <div>
-        Render AddOption component here
+        AddOption component here
       </div>
     );
   }
 }
 
-const jsx = (
-  <div>
-    <Header />
-    <Action />
-    <Options />
-    <AddOption />
-  </div>
-);
-
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<DecisionTreeApp />, document.getElementById('app'));
