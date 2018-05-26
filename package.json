@@ -1,9 +1,10 @@
 {
-  "name": "decision-app",
+  "name": "boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {},
-  "author": "Luis D. Cortes <renaissance.scholar2012@gmail.com> (https://dancortes-portfolio.herokuapp.com/)",
+  "author":
+    "Luis D. Cortes <renaissance.scholar2012@gmail.com> (https://dancortes-portfolio.herokuapp.com/)",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
